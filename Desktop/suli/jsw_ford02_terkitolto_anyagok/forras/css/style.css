@@ -1,0 +1,60 @@
+:root {
+    --kek: rgb(3 114 197);
+    --sotetkek: rgb(0 61 138);
+    --barna: rgb(94 60 38);
+    --feher: #ffffff;
+    --fekete: #000000;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--kek);
+    color: var(--sotetkek);
+    font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Rubik Distressed', system-ui;
+    font-weight: 400;
+}
+
+h2 {
+    font-variant: small-caps;
+}
+
+header {
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/banner.png);
+    background-position: center; 
+    background-size: cover;
+    text-align: center;
+}
+
+header h1 {
+    color: var(--feher);
+    margin: 0;
+    font-size: 2rem; 
+}
+
+.container {
+    background-color: var(--feher);
+    margin: 0 auto;
+    width: 100%;
+    min-height: 500px;
+    box-shadow: 10px 10px 20px var(--sotetkek); 
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+@media (min-width: 750px) {
+    .container {
+        width: 80%;
+    }
+    .main-header h1 {
+        font-size: 3rem;
+    }
+}
