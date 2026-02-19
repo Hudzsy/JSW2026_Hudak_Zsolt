@@ -18,3 +18,23 @@ calcForm.addEventListener('submit', (e) => {
         alert("Hiba: Minden adatnak 0-nál nagyobbnak kell lennie!");
     }
 });
+
+const buttons = document.querySelectorAll('.category-button');
+const items = document.querySelectorAll('.category-item');
+
+buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        const cat = btn.dataset.cat;
+        
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        items.forEach(item => {
+            if (cat === 'all' || item.id === cat) {
+                item.style.display = 'list-item';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
