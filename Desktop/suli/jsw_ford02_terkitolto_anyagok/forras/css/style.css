@@ -35,26 +35,151 @@ header {
 }
 
 header h1 {
-    color: var(--feher);
-    margin: 0;
-    font-size: 2rem; 
+    color: white;
+    font-size: 2rem;
+}
+
+@media (min-width: 750px) {
+    header h1 { font-size: 3.5rem; }
 }
 
 .container {
-    background-color: var(--feher);
-    margin: 0 auto;
+    background-color: white;
     width: 100%;
-    min-height: 500px;
-    box-shadow: 10px 10px 20px var(--sotetkek); 
+    margin: 0 auto;
+    box-shadow: 10px 10px 20px var(--sotetkek);
     padding: 20px;
     box-sizing: border-box;
 }
 
-@media (min-width: 750px) {
-    .container {
-        width: 80%;
-    }
-    .main-header h1 {
-        font-size: 3rem;
-    }
+@media (min-width: 750px) { .container { width: 80%; } }
+
+.category-list {
+    list-style-position: inside;
+    padding: 0;
+}
+
+.category-item::marker {
+    font-family: 'Rubik Distressed', cursive;
+    font-size: 1.5rem;
+}
+
+.inline-title { display: inline; margin-left: 10px; }
+
+.category-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.category-button {
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--sotetkek);
+    background-color: rgb(from var(--sotetkek) r g b / 0.1);
+    transition: 0.3s;
+}
+
+.category-button.active, .category-button:hover {
+    background-color: var(--sotetkek);
+    color: white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    list-style-type: none; 
+}
+
+@media (min-width: 750px) { .product-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1200px) { .product-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 10px 20px rgb(from var(--sotetkek) r g b / 0.4); 
+}
+
+header {
+    background: linear-gradient(to bottom, rgb(from var(--barna) r g b / 0.8), rgba(0,0,0,0.6)), 
+                url('../forras/banner.png') center/cover no-repeat !important;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 5px;
+}
+
+
+#calc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#calc-form input {
+    border-radius: 5px;
+    border: 1px solid var(--sotetkek);
+    padding: 8px;
+}
+
+#calc-submit {
+    background-color: var(--sotetkek);
+    color: white;
+    border-radius: 50px;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#calc-submit:hover {
+    background-color: rgb(from var(--sotetkek) r g b / 0.9); 
+}
+
+dialog {
+    border: 2px solid var(--sotetkek); 
+    color: var(--sotetkek); 
+    border-radius: 10px;
+    padding: 2rem;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+#close-dialog {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: var(--sotetkek);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: var(--sotetkek);
+    color: white; 
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
 }
